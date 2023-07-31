@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\MessageResource\Pages;
+use App\Mail\RespondMail;
 use App\Models\Message;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
@@ -17,6 +18,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Support\Facades\Mail;
 
 class MessageResource extends Resource
 {
@@ -72,6 +74,10 @@ class MessageResource extends Resource
                         'answer_attachments' => $data['answer_attachments'],
                         'answered_at' => now()
                     ]);
+
+
+                    Mail::to($record->email, $record->name)->send(new RespondMail($record));
+                    
                 })
                 ->form([
                     Textarea::make('answer')->label('Balasan')->required(),
