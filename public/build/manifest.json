@@ -1,0 +1,17 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-0098af6e.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/css/mail.css": {
+    "file": "assets/mail-f416e32a.css",
+    "isEntry": true,
+    "src": "resources/css/mail.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-dbf90890.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
